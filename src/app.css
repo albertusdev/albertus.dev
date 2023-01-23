@@ -1,0 +1,30 @@
+:root {
+  --layout-width: 1080px;
+
+  --bg-color: #fff;
+  --text-color: #111;
+
+  --primary-font-family: "PlusJakartaSan", sans-serif;
+  --secondary-font-family: "Inter", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #111;
+    --text-color: #fff;
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--primary-font-family);
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+main {
+  max-width: var(--layout-width);
+  padding: 0 1rem;
+  margin: 0 auto;
+}
