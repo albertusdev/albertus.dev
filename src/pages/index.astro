@@ -1,0 +1,59 @@
+---
+import { changeLanguage, t } from "i18next";
+import { localizePath } from "astro-i18next";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+import LatestPosts from "@components/LatestPosts.astro";
+
+changeLanguage("en");
+---
+
+<BaseLayout>
+  <main>
+    <div>
+      <div>
+        <h1>Albertus Angga Raharja</h1>
+        <p>
+          👋🏻 Hi! I'm a software engineer from Indonesia who's passionate about
+          all things #frontend and #flutter. <p>
+            ✍🏻I'm here to write and share about my journey of growth as a
+            software engineer.
+          </p>
+        </p>
+        <a href={localizePath("/about")}>{t("home.more_about_me")} →</a>
+      </div>
+      <img src="me.jpg" alt="Albertus" />
+    </div>
+
+    <LatestPosts />
+  </main>
+</BaseLayout>
+
+<style>
+  main > div:first-of-type {
+    width: 100%;
+    height: calc(var(--screen-height) * 0.5);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 3rem;
+
+    /* center the row */
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+  }
+  img {
+    width: 100%;
+    max-width: 300px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+  p {
+    font-size: 1.25rem;
+  }
+  a {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+</style>

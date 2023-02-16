@@ -1,0 +1,10 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+
+// Return the blog entries sorted by date, newest first
+export const getBlogCollection = async (): Promise<CollectionEntry<"blog">[]> => {
+  const blogEntries = await getCollection("blog");
+  blogEntries.sort((b1, b2) => b2.data.date.getTime() - b1.data.date.getTime());
+  return blogEntries;
+};
+---

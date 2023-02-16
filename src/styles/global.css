@@ -1,0 +1,66 @@
+:root {
+  --layout-width: 1080px;
+
+  --font-family-display: "Lexend Deca", sans-serif;
+  --font-family-primary: "Albert Sans", sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: #fff;
+    --color-text: #111;
+    --color-primary: #3b5998;
+    --color-divider: #d1d5dbff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #111;
+    --color-text: #fff;
+    --color-primary: #4c68d7;
+    --color-divider: #7e8287ff;
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family-primary);
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-display);
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+footer {
+  margin-top: auto;
+}
+
+header,
+main,
+footer {
+  max-width: var(--layout-width);
+}

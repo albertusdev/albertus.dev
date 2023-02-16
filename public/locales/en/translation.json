@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "bookshelf": "Bookshelf"
+  },
+  "home": {
+    "more_about_me": "More about me",
+    "latest_posts": "Latest posts"
+  }
+}

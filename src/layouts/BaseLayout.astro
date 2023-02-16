@@ -1,0 +1,46 @@
+---
+interface Props {
+  title?: string;
+}
+// import { astroI18n } from "astro-i18n";
+import i18next from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
+
+import "../styles/global.css";
+
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+const { title } = Astro.props;
+
+// astroI18n.init(Astro);
+---
+
+<html lang={i18next.language}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="stylesheet" href="fonts/LexendDeca/LexendDeca.css" />
+    <link rel="stylesheet" href="fonts/AlbertSans/AlbertSans.css" />
+    <title>{title || "Albertus Angga Raharja - albertus.dev"}</title>
+
+    <HeadHrefLangs />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+    <script is:inline>
+      // Set the height of the screen to a CSS variable due to viewport height bug on mobile devices
+      window.addEventListener("resize", () => {
+        document.documentElement.style.setProperty(
+          "--screen-height",
+          `${window.innerHeight}px`
+        );
+      });
+    </script>
+  </body>
+</html>

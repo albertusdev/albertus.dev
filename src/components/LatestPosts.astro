@@ -1,0 +1,45 @@
+---
+import { getBlogCollection } from "content/utils.astro";
+import { t } from "i18next";
+
+const blogEntries = (await getBlogCollection()).slice(0, 5);
+console.log("blogEntries", blogEntries);
+---
+
+<div>
+  <h2>
+    {t("Latest Content")}
+  </h2>
+  <ul>
+    {
+      blogEntries.map((blogPostEntry) => (
+        <li>
+          <a href={`/blog/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
+          <time datetime={blogPostEntry.data.date.toISOString()}>
+            {blogPostEntry.data.date.toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit",
+            })}
+          </time>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  a {
+    text-decoration: underline;
+  }
+  time {
+    color: #666;
+  }
+  li {
+    padding: 0.1rem 0;
+  }
+  h2 {
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+  }
+</style>

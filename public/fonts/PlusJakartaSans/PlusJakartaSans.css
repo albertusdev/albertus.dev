@@ -1,0 +1,51 @@
+/* PlusJakartaSans CSS setup */
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("./PlusJakartaSans/vf/PlusJakartaSans[wght].ttf") format("truetype");
+  font-weight: 100 900; /* specify the weight range for the variable font */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("./PlusJakartaSans/vf/PlusJakartaSans-Italic[wght].ttf")
+    format("truetype");
+  font-weight: 100 900; /* specify the weight range for the variable font */
+  font-style: italic;
+}
+
+/* static files as fallback */
+/* TODO(albertusdev): Add light, medium, and extrabold font definition once needed.  */
+@supports not (font-variation-settings: normal) {
+  @font-face {
+    font-family: "PlusJakartaSans";
+    src: url("./PlusJakartaSans/static/PlusJakartaSans-Bold.ttf")
+      format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "PlusJakartaSans";
+    src: url("./PlusJakartaSans/static/PlusJakartaSans-BoldItalic.ttf")
+      format("truetype");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "PlusJakartaSans";
+    src: url("./PlusJakartaSans/static/PlusJakartaSans-Regular.ttf")
+      format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "PlusJakartaSans";
+    src: url("./PlusJakartaSans/static/PlusJakartaSans-Italic.ttf")
+      format("truetype");
+    font-weight: 400;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,57 @@
+---
+import { t } from "i18next";
+import { getPathnameWithoutLocale } from "utils/url";
+import { localizePath } from "astro-i18next";
+
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+const LINKS: NavLink[] = [
+  { href: localizePath("/"), label: `${t("nav.home")}` },
+  { href: localizePath("/about"), label: t("nav.about") },
+  { href: localizePath("/blog"), label: t("nav.blog") },
+  // { href: localizePath("/bookshelf"), label: t("nav.bookshelf") },
+];
+
+// omit the locale prefix if exists
+const pathname = getPathnameWithoutLocale(Astro.request.url);
+---
+
+<header>
+  <nav>
+    {
+      LINKS.map(({ href, label }) => (
+        <a href={href} aria-current={href === pathname ? "page" : undefined}>
+          {label}
+        </a>
+      ))
+    }
+  </nav>
+  <hr />
+</header>
+
+<style>
+  header {
+    width: 100%;
+    padding-top: 1rem;
+  }
+  header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1 {
+    margin-bottom: 0;
+  }
+  nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+  nav > a[aria-current="page"] {
+    font-weight: bold;
+  }
+</style>
