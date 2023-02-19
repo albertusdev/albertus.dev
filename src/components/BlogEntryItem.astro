@@ -1,6 +1,7 @@
 ---
 import type { BlogEntry } from "utils/content";
 import { formatDate } from "utils/time";
+import { getBlogPathname } from "utils/url";
 
 export type Props = BlogEntry;
 
@@ -8,7 +9,7 @@ const props = Astro.props;
 ---
 
 <article>
-  <a href={props.slug}>
+  <a href={getBlogPathname(props)}>
     <h3>{props.data.title}</h3>
     <time>{formatDate(props.data.date)}</time>
     <p>{props.data.description}</p>
