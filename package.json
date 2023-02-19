@@ -12,6 +12,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@astrolib/seo": "^0.3.0",
     "astro": "^2.0.10"
   },
   "devDependencies": {

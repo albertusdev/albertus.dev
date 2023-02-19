@@ -16,7 +16,10 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BaseLayout title={`${entry.data.title} | Albertus Angga Raharja`}>
+<BaseLayout
+  title={`${entry.data.title} | Albertus Angga Raharja`}
+  description={entry.data.description}
+>
   <main>
     <h1>{entry.data.title}</h1>
     <article>

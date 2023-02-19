@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@astrolib/seo': ^0.3.0
   astro: ^2.0.10
   husky: ^8.0.3
   prettier: ^2.8.4
@@ -8,10 +9,11 @@ specifiers:
   vitest: ^0.28.5
 
 dependencies:
+  '@astrolib/seo': 0.3.0_astro@2.0.10
   astro: 2.0.10
-  husky: 8.0.3
 
 devDependencies:
+  husky: 8.0.3
   prettier: 2.8.4
   prettier-plugin-astro: 0.8.0
   vitest: 0.28.5
@@ -101,6 +103,14 @@ packages:
     resolution: {integrity: sha512-gziwy+XvY+/B9mq/eurgJMZ4iFnkcqg1wb0tA8BsVfiUPwl7yQKAFrBxrs2rWfKMXyWlVaTFc8rAYcB5VXQEuw==}
     dependencies:
       undici: 5.18.0
+    dev: false
+
+  /@astrolib/seo/0.3.0_astro@2.0.10:
+    resolution: {integrity: sha512-u0CBicM6nj0YIav76dA8ujaLnDwIWTnTkVJMk84jXsTOGR0/lA823WNf6kxSyWbds0kgegKnu1EuU9wIqkyWNg==}
+    peerDependencies:
+      astro: ^1.2.1 || ^2.0.0
+    dependencies:
+      astro: 2.0.10
     dev: false
 
   /@babel/code-frame/7.18.6:
@@ -1482,7 +1492,7 @@ packages:
     resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: false
+    dev: true
 
   /ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}

@@ -1,14 +1,20 @@
 ---
 interface Props {
   title?: string;
+  description?: string;
 }
 
 import "../styles/global.css";
 
+import { AstroSeo } from "@astrolib/seo";
+
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 
-const { title } = Astro.props;
+let { title, description } = Astro.props;
+
+title = title || "Albertus Angga Raharja - albertus.dev";
+description = description || "Albertus Angga Raharja's personal site";
 ---
 
 <html lang="en">
@@ -18,7 +24,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>{title || "Albertus Angga Raharja - albertus.dev"}</title>
+    <title>{title}</title>
     <link rel="stylesheet" href="/fonts/LexendDeca/LexendDeca.css" />
     <link rel="stylesheet" href="/fonts/AlbertSans/AlbertSans.css" />
 
@@ -65,6 +71,30 @@ const { title } = Astro.props;
       rel="manifest"
       href="/favicon/dark/site.webmanifest"
       media="(prefers-color-scheme: dark)"
+    />
+
+    <AstroSeo
+      title={title}
+      description={description}
+      canonical="https://albertus.dev"
+      openGraph={{
+        type: "website",
+        url: "https://albertus.dev",
+        title,
+        description,
+        site_name: description,
+        profile: {
+          firstName: "Albertus",
+          lastName: "Angga Raharja",
+          username: "albertusdev",
+          gender: "male",
+        },
+      }}
+      twitter={{
+        site: "@albertusdev",
+        handle: "@albertusdev",
+        cardType: "summary_large_image",
+      }}
     />
   </head>
   <body>
