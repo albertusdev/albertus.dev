@@ -1,9 +1,47 @@
 ---
 import type { BlogEntry } from "utils/content";
+import { formatDate } from "utils/time";
 
 export type Props = BlogEntry;
+
+const props = Astro.props;
 ---
 
 <article>
-  <a href={props.slug}> </a>
+  <a href={props.slug}>
+    <h3>{props.data.title}</h3>
+    <time>{formatDate(props.data.date)}</time>
+    <p>{props.data.description}</p>
+
+    <div>Read more</div>
+  </a>
 </article>
+
+<style>
+  article {
+    padding: 1rem;
+  }
+  h3 {
+    margin-bottom: 0.25rem;
+  }
+  a {
+    color: var(--color-text) !important;
+    text-decoration: none;
+  }
+  time {
+    font-weight: 200;
+    font-size: 0.8rem;
+  }
+  p {
+    margin-top: 1rem;
+  }
+  a > div {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+    transition: color 0.2s ease;
+  }
+</style>

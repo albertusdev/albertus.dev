@@ -1,4 +1,5 @@
 ---
+import BlogEntryItem from "@components/BlogEntryItem.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getBlogCollection } from "utils/content";
 import { getTitle } from "utils/title";
@@ -7,5 +8,16 @@ const allBlogPosts = await getBlogCollection();
 ---
 
 <BaseLayout title={getTitle("Posts")}>
-  <h1>All Posts</h1>
+  <main>
+    <div>
+      <h1>All Posts</h1>
+      {allBlogPosts.map((blogPost) => <BlogEntryItem {...blogPost} />)}
+    </div>
+  </main>
 </BaseLayout>
+
+<style>
+  main {
+    width: 100%;
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import { getBlogCollection } from "utils/content";
+import { formatDate } from "utils/time";
 import { getBlogPathname } from "utils/url";
 
 const blogEntries = (await getBlogCollection()).slice(0, 5);
@@ -15,11 +16,7 @@ const blogEntries = (await getBlogCollection()).slice(0, 5);
             {blogPostEntry.data.title}
           </a>
           <time datetime={blogPostEntry.data.date.toISOString()}>
-            {blogPostEntry.data.date.toLocaleDateString(undefined, {
-              year: "numeric",
-              month: "2-digit",
-              day: "2-digit",
-            })}
+            {formatDate(blogPostEntry.data.date)}
           </time>
         </li>
       ))

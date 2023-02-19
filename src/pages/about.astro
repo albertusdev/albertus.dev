@@ -5,11 +5,19 @@ import { getTitle } from "utils/title";
 
 <BaseLayout title={getTitle("About")}>
   <main>
+    <img
+      src="/images/me.jpg"
+      alt="Albertus Angga Raharja"
+      width="128px"
+      height="128px"
+    />
     <h1>About Me</h1>
 
     <p>
-      Hey! My name is Albertus. I'm a Software Engineer who enjoys building
-      great products and crafting beautiful user experiences.
+      Hey! My name is Albertus. I'm a Software Engineer who enjoys tinkering
+      with user interface and crafting product with great user experience. I
+      specialize in front-end development, but I also love stitching different
+      parts of software components.
     </p>
     <p>
       Currently, I'm working as a Senior Software Engineer at <a
@@ -19,13 +27,16 @@ import { getTitle } from "utils/title";
     </p>
     <p>
       Before that, I was at <a href="https://stripe.com">Stripe</a> for almost two
-      years. Stripe was my first full-time job right after graduation. I was the
-      founding engineer for Stripe Indonesia team, and I spent majority of my time
-      expanding Stripe's global payments and treasury networks in South East Asia.
+      years right after graduation. I started at Singapore for the first year and
+      then relocated back to Indonesia the next year to became the Indonesia team
+      founding engineer. I spent majority of my time there expanding Stripe's alternative
+      payment method (APM) offerings in South East Asia.
     </p>
     <p>
-      I'm currently in love and obsessed with building great products and I love
-      stitching different parts of software components.
+      Before that, I was best known for my work on creating <a
+        href="https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer"
+        >Layout Explorer</a
+      > during my internship at <a href="github.com/google">Google</a>
     </p>
 
     <h2>Beginnings of my career</h2>
@@ -90,12 +101,18 @@ import { getTitle } from "utils/title";
     <h2>Random stuffs ✨</h2>
     <hr />
     <p>
-      I'm a huge nerd and I love playing JRPG video games and watching anime
-      during my leisure ⚽ Also, I like to speed type and I can type around
-      150-160 word per minute on average. Hit me up on <a
-        href="https://data.typeracer.com/pit/profile?user=adalberht"
+      I'm a nerd and I love watching anime during my leisure. Also, I like to
+      speed type and I can type around 150-160 word per minute on average. Hit
+      me up on <a href="https://data.typeracer.com/pit/profile?user=adalberht"
         >TypeRacer</a
       > ⭐
     </p>
   </main>
 </BaseLayout>
+
+<style>
+  img {
+    border-radius: 50%;
+    margin-top: 1rem;
+  }
+</style>

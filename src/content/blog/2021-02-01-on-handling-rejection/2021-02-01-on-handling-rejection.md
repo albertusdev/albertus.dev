@@ -1,5 +1,6 @@
 ---
 title: "On Handling Rejection"
+description: "My Personal Reflection about How to Handle Rejection"
 date: 2021-02-01
 slug: "on-handling-rejection"
 banner: "./on-handling-rejection.png"
