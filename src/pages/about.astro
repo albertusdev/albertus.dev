@@ -1,11 +1,9 @@
 ---
-import { changeLanguage } from "i18next";
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-changeLanguage("en");
+import { getTitle } from "utils/title";
 ---
 
-<BaseLayout>
+<BaseLayout title={getTitle("About")}>
   <main>
     <h1>About Me</h1>
 

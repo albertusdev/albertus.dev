@@ -1,14 +1,10 @@
 ---
-import { changeLanguage, t } from "i18next";
-import { localizePath } from "astro-i18next";
-
 import BaseLayout from "@layouts/BaseLayout.astro";
 import LatestPosts from "@components/LatestPosts.astro";
-
-changeLanguage("en");
+import { getTitle } from "utils/title";
 ---
 
-<BaseLayout>
+<BaseLayout title={getTitle("Home")}>
   <main>
     <div>
       <div>
@@ -20,9 +16,9 @@ changeLanguage("en");
             software engineer.
           </p>
         </p>
-        <a href={localizePath("/about")}>{t("home.more_about_me")} →</a>
+        <a href={"/about"}>More about me →</a>
       </div>
-      <img src="me.jpg" alt="Albertus" />
+      <img src="/images/me.jpg" alt="Albertus" />
     </div>
 
     <LatestPosts />

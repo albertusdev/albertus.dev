@@ -2,7 +2,7 @@
 @supports (font-variation-settings: normal) {
   @font-face {
     font-family: "Albert Sans";
-    src: url("AlbertSans-VariableFont_wght.ttf") format("truetype");
+    src: url("./AlbertSans-VariableFont_wght.ttf") format("truetype");
     font-weight: 100 900;
     font-style: swap;
   }

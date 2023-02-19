@@ -2,9 +2,6 @@
 interface Props {
   title?: string;
 }
-// import { astroI18n } from "astro-i18n";
-import i18next from "i18next";
-import { HeadHrefLangs } from "astro-i18next/components";
 
 import "../styles/global.css";
 
@@ -12,22 +9,63 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 
 const { title } = Astro.props;
-
-// astroI18n.init(Astro);
 ---
 
-<html lang={i18next.language}>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="stylesheet" href="fonts/LexendDeca/LexendDeca.css" />
-    <link rel="stylesheet" href="fonts/AlbertSans/AlbertSans.css" />
     <title>{title || "Albertus Angga Raharja - albertus.dev"}</title>
+    <link rel="stylesheet" href="/fonts/LexendDeca/LexendDeca.css" />
+    <link rel="stylesheet" href="/fonts/AlbertSans/AlbertSans.css" />
 
-    <HeadHrefLangs />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/light/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/light/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/light/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/light/site.webmanifest" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/dark/apple-touch-icon.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/dark/favicon-32x32.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/dark/favicon-16x16.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="manifest"
+      href="/favicon/dark/site.webmanifest"
+      media="(prefers-color-scheme: dark)"
+    />
   </head>
   <body>
     <Header />

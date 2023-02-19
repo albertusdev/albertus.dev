@@ -1,20 +1,19 @@
 ---
-import { getBlogCollection } from "content/utils.astro";
-import { t } from "i18next";
+import { getBlogCollection } from "utils/content";
+import { getBlogPathname } from "utils/url";
 
 const blogEntries = (await getBlogCollection()).slice(0, 5);
-console.log("blogEntries", blogEntries);
 ---
 
 <div>
-  <h2>
-    {t("Latest Content")}
-  </h2>
+  <h2>Latest content</h2>
   <ul>
     {
       blogEntries.map((blogPostEntry) => (
         <li>
-          <a href={`/blog/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
+          <a href={getBlogPathname(blogPostEntry)}>
+            {blogPostEntry.data.title}
+          </a>
           <time datetime={blogPostEntry.data.date.toISOString()}>
             {blogPostEntry.data.date.toLocaleDateString(undefined, {
               year: "numeric",

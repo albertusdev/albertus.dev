@@ -9,7 +9,7 @@
   :root {
     --color-background: #fff;
     --color-text: #111;
-    --color-primary: #3b5998;
+    --color-primary: #869ac4ff;
     --color-divider: #d1d5dbff;
   }
 }
@@ -18,7 +18,7 @@
   :root {
     --color-background: #111;
     --color-text: #fff;
-    --color-primary: #4c68d7;
+    --color-primary: #869ac4ff;
     --color-divider: #7e8287ff;
   }
 }
@@ -63,4 +63,17 @@ header,
 main,
 footer {
   max-width: var(--layout-width);
+}
+
+blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: 1rem;
+  margin-left: 0;
+  font-style: italic;
+}
+
+pre {
+  background-color: var(--color-divider);
+  padding: 1rem;
+  border-radius: 0.5rem;
 }

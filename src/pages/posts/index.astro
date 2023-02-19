@@ -1,0 +1,11 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getBlogCollection } from "utils/content";
+import { getTitle } from "utils/title";
+
+const allBlogPosts = await getBlogCollection();
+---
+
+<BaseLayout title={getTitle("Posts")}>
+  <h1>All Posts</h1>
+</BaseLayout>
