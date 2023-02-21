@@ -1,10 +1,30 @@
 ---
+const links = [
+  {
+    title: "Twitter",
+    url: "https://twitter.com/@albertusdev",
+  },
+  {
+    title: "GitHub",
+    url: "https://github.com/albertusdev",
+  },
+  {
+    title: "Contact",
+    url: "mailto:hello@albertus.dev",
+  },
+];
 ---
 
 <footer>
   <hr />
   <div>
-    {new Date().getFullYear()} &copy; Albertus Angga Raharja. All Rights Reserved.
+    <div>
+      {new Date().getFullYear()} &copy; Albertus Angga Raharja. All Rights Reserved.
+    </div>
+    <div class="links">
+      <h4>Links</h4>
+      {links.map(({ title, url }) => <a href={url}>{title}</a>)}
+    </div>
   </div>
 </footer>
 
@@ -12,5 +32,20 @@
   footer {
     width: 100%;
     padding: 1rem 0;
+  }
+  footer > div {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
+    padding: 1rem 0;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .links > h4 {
+    margin-top: 0rem;
+    margin-bottom: 0.75rem;
   }
 </style>
