@@ -103,12 +103,14 @@ description = description || "Albertus Angga Raharja's personal site";
     <Footer />
     <script is:inline>
       // Set the height of the screen to a CSS variable due to viewport height bug on mobile devices
-      window.addEventListener("resize", () => {
+      const setScreenHeight = () => {
         document.documentElement.style.setProperty(
           "--screen-height",
           `${window.innerHeight}px`
         );
-      });
+      };
+      // setScreenHeight();
+      // window.addEventListener("resize", setScreenHeight);
     </script>
   </body>
 </html>

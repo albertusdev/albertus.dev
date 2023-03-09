@@ -1,6 +1,6 @@
 :root {
-  --layout-width: 1080px;
-
+  --layout-width: min(100ch, 90vw);
+  --screen-height: 100vh;
   --font-family-display: "Lexend Deca", sans-serif;
   --font-family-primary: "Albert Sans", sans-serif;
 }
@@ -23,18 +23,46 @@
   }
 }
 
+/* Layout */
 body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family-primary);
+
   width: 100vw;
-  min-height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-height: var(--screen-height);
+
+  display: grid;
+  grid-template: auto 1fr auto / auto var(--layout-width) auto;
+
+  padding: 1rem;
+  overflow-x: hidden;
 }
 
+footer {
+  margin-top: auto;
+}
+
+/* Align header, main, footer on center */
+header,
+main,
+footer {
+  grid-column: 2 / 3;
+}
+
+.left-sidebar {
+  grid-column: 1 / 2;
+}
+
+.right-sidebar {
+  grid-column: 3 / 4;
+}
+
+main {
+  margin: 0 auto;
+}
+
+/* Typography */
 h1,
 h2,
 h3,
@@ -53,16 +81,6 @@ hr {
 a {
   color: var(--color-primary);
   text-decoration: none;
-}
-
-footer {
-  margin-top: auto;
-}
-
-header,
-main,
-footer {
-  max-width: var(--layout-width);
 }
 
 blockquote {

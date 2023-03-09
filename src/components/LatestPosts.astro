@@ -12,12 +12,14 @@ const blogEntries = (await getBlogCollection()).slice(0, 5);
     {
       blogEntries.map((blogPostEntry) => (
         <li>
-          <a href={getBlogPathname(blogPostEntry)}>
-            {blogPostEntry.data.title}
-          </a>
-          <time datetime={blogPostEntry.data.date.toISOString()}>
-            {formatDate(blogPostEntry.data.date)}
-          </time>
+          <div>
+            <a href={getBlogPathname(blogPostEntry)}>
+              {blogPostEntry.data.title}
+            </a>
+            <time datetime={blogPostEntry.data.date.toISOString()}>
+              {formatDate(blogPostEntry.data.date)}
+            </time>
+          </div>
         </li>
       ))
     }
@@ -31,9 +33,21 @@ const blogEntries = (await getBlogCollection()).slice(0, 5);
   time {
     color: #666;
   }
+
+  ul {
+    margin-block-start: 0.5rem;
+    padding-left: 1rem;
+  }
   li {
     padding: 0.1rem 0;
   }
+
+  li > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
   h2 {
     margin-bottom: 0rem;
     padding-bottom: 0rem;

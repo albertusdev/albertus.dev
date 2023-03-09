@@ -18,7 +18,7 @@ const links = [
 <footer>
   <hr />
   <div>
-    <div>
+    <div class="copyright">
       {new Date().getFullYear()} &copy; Albertus Angga Raharja. All Rights Reserved.
     </div>
     <div class="links">
@@ -30,19 +30,28 @@ const links = [
 
 <style>
   footer {
-    width: 100%;
     padding: 1rem 0;
   }
   footer > div {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 1rem;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: flex-start;
+    gap: 1rem;
     padding: 1rem 0;
   }
+  .copyright {
+    flex-grow: 2;
+    min-width: min(100%, 25rem);
+  }
   .links {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    text-align: center;
+    align-items: center;
+    min-width: min(100%, 10rem);
+    margin-bottom: 1rem;
   }
   .links > h4 {
     margin-top: 0rem;

@@ -7,7 +7,7 @@ import { getTitle } from "utils/title";
 <BaseLayout title={getTitle("Home")}>
   <main>
     <div>
-      <div>
+      <div class="intro">
         <h1>Albertus Angga Raharja</h1>
         <p>
           👋🏻 Hi! I'm a software engineer from Indonesia who's passionate about
@@ -28,22 +28,29 @@ import { getTitle } from "utils/title";
 <style>
   main > div:first-of-type {
     width: 100%;
-    height: calc(var(--screen-height) * 0.5);
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 3rem;
+    min-height: calc(var(--screen-height) * 0.5);
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap-reverse;
 
     /* center the row */
     justify-content: center;
     align-items: center;
 
     margin-top: 2rem;
+    margin-bottom: 2rem;
   }
+
+  .intro {
+    flex: 1;
+    min-width: min(400px, 100%);
+  }
+
   img {
-    width: 100%;
-    max-width: 300px;
+    width: 250px;
     object-fit: contain;
     border-radius: 50%;
+    margin: 0 auto;
   }
   p {
     font-size: 1.25rem;
