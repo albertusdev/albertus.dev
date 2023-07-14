@@ -14,13 +14,13 @@
   },
   "dependencies": {
     "@astrojs/markdoc": "^0.4.2",
-    "@astrolib/seo": "^0.3.0",
+    "@astrolib/seo": "^0.4.0",
     "astro": "^2.8.2"
   },
   "devDependencies": {
     "husky": "^8.0.3",
-    "prettier": "^2.8.4",
-    "prettier-plugin-astro": "^0.8.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-astro": "^0.11.0",
     "vitest": "^0.28.5"
   },
   "lint-staged": {
