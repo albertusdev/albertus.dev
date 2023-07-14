@@ -13,8 +13,9 @@
     "lint": "prettier --check ."
   },
   "dependencies": {
+    "@astrojs/markdoc": "^0.4.2",
     "@astrolib/seo": "^0.3.0",
-    "astro": "^2.0.10"
+    "astro": "^2.8.2"
   },
   "devDependencies": {
     "husky": "^8.0.3",
